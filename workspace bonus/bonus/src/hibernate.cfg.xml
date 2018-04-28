@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PARTE QUE INFORMA AO XML QUE O CONTEUDO É DE HIBERNATE -->
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0.dtd"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<!-- TAG de configuração do Hibernate -->
+<hibernate-configuration>
+
+	<!-- TAG de fábrica de Sessão do hibernate. É aqui onde informamos os dados 
+		do banco, as configurações da sessão e as classes Model do java que o Hibernate 
+		deverá considerar. -->
+	<session-factory>
+		<!-- PARTE MAIS IMPORTANTE - MUDA DE PROJETO PARA PROJETO -->
+		<!-- CONFIGURAÇÃO DA CONEXÃO COM O BANCO DE DADOS -->
+
+		<!-- Driver do banco de dados utilizado. Esta dentro da biblioteca usada. -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<!-- URL do Banco, ou seja, seu caminho de acesso -->
+		<property name="connection.url">jdbc:mysql://localhost/bonus</property>
+		<!-- <property name="connection.url">jdbc:mysql://localhost/bonus?createDatabaseIfNotExist=true</property> 
+			Cria a base automatica, porem desativa o hbm.ddl update -->
+
+		<!-- Usuario e senha do banco acima informado. -->
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<!-- Dialeto do Banco de Dados - Varia de Acordo com o BD que será usado -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+
+		<!-- FIM DA PARTE QUE MUDA DE PROJETO PARA PROJETO -->
+
+		<!-- Impressão da SQL na Saida padrão -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Configuração de validação do Banco de Dados na execução do sistema -->
+		<!-- É aqui que se informa se o banco será criado pelo Hibernate (drop-create) -->
+		<!-- <property name="hbm2ddl.auto">drop-create</property> --> <!-- Apaga e cria o banco com base nas annotations cada vez que executa o 
+			BD -->
+		<!-- <property name="hbm2ddl.auto">creat</property> --> <!-- Cria a estrutura do banco de dados com base nos Models(VOs) -->
+		<property name="hbm2ddl.auto">update</property> <!-- Apenas atualiza a estrutura -->
+		<!-- <property name="hbm2ddl.auto">validate</property> --> <!-- Apenas valida a estrutura -->
+
+		<!-- PARTE MAIS IMPORTANTE - MUDA DE PROJETO PARA PROJETO -->
+		<!-- PARA CADA NOVA CLASSE MODEL(VO) CRIADA DEVE INFORMA-LA AQUI -->
+		
+		<!-- TELEFONE -->
+		<mapping class="br.com.bonus.telefone.telefone.model.TelefoneVO" />
+		<mapping class="br.com.bonus.telefone.tipotelefone.model.TipoTelefoneVO" />
+		
+		<!-- ENDERECO -->
+		<mapping class="br.com.bonus.endereco.pais.model.PaisVO" />
+		<mapping class="br.com.bonus.endereco.estado.model.EstadoVO" />
+		<mapping class="br.com.bonus.endereco.municipio.model.MunicipioVO" />
+		<mapping class="br.com.bonus.endereco.endereco.model.EnderecoVO" />
+		
+		<!-- CONTRATO -->
+		<mapping class="br.com.bonus.contrato.tipocontrato.model.TipoContratoVO" />
+		<mapping class="br.com.bonus.contrato.contrato.model.ContratoVO" />
+		
+		<!-- PESSOA -->
+		<mapping class="br.com.bonus.pessoa.cliente.model.ClienteVO" />
+		
+		<!-- IMOVEL -->
+		<mapping class="br.com.bonus.imovel.apartamento.model.ApartamentoVO"/>
+		<mapping class="br.com.bonus.imovel.casa.model.CasaVO"/>
+		<mapping class="br.com.bonus.imovel.imovel.model.ImovelVO"/>
+		<mapping class="br.com.bonus.imovel.tipofinalidade.model.TipoFinalidadeVO"/>
+		<mapping class="br.com.bonus.imovel.tiponegociacao.model.TipoNegociacaoVO"/>
+
+	</session-factory>
+
+</hibernate-configuration>

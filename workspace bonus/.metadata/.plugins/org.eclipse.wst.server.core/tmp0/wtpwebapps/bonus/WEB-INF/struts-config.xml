@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<!-- Neste XML é onde nós mapeamos as nossas classes Action e Form e as
+	 telas que serão utilizadas, além de atribuir apelidos as classes Actions e Forms.  
+	 Ou seja, neste xml serão relacionados as Actions as Forms e as JSPs para
+	 manter o padrão MVC da Framework Struts.
+-->
+
+<struts-config>
+	<!-- Todas as Classes Form devem ser mapeadas nesta TAG. 
+		 É aqui onde damos os apelidos às classes Form -->
+	<form-beans>
+		<!-- name : Apelido dado a nossa classe Form a fim de usa-la no nosso JSP.-->
+		<!-- type : Classe a ser chamada quando usado o apelido(name).-->
+		
+		<!-- TELEFONE -->
+		<form-bean name="tipoTelefoneForm" type="br.com.bonus.telefone.tipotelefone.action_form.TipoTelefoneForm" />
+		<form-bean name="telefoneForm" type="br.com.bonus.telefone.telefone.action_form.TelefoneForm" />
+		
+		<!-- ENDERECO -->
+		<form-bean name="paisForm" type="br.com.bonus.endereco.pais.action_form.PaisForm" />
+		<form-bean name="estadoForm" type="br.com.bonus.endereco.estado.action_form.EstadoForm" />
+		<form-bean name="municipioForm" type="br.com.bonus.endereco.municipio.action_form.MunicipioForm" />
+		<form-bean name="enderecoForm" type="br.com.bonus.endereco.endereco.action_form.EnderecoForm" />
+		
+		<!-- PESSOA -->
+		<form-bean name="pessoaForm" type="br.com.bonus.pessoa.pessoa.action_form.PessoaForm" />
+		<form-bean name="corretorForm" type="br.com.bonus.pessoa.corretor.action_form.CorretorForm" />
+		<form-bean name="clienteForm" type="br.com.bonus.pessoa.cliente.action_form.ClienteForm" />
+		
+		<!-- CONTRATO -->
+		<form-bean name="tipoContratoForm" type="br.com.bonus.contrato.tipocontrato.action_form.TipoContratoForm"/>
+		<form-bean name="contratoForm" type="br.com.bonus.contrato.contrato.action_form.ContratoForm"/>
+		
+		<!-- IMOVEL -->
+		<form-bean name="apartamentoForm" type="br.com.bonus.imovel.apartamento.action_form.ApartamentoForm"/>
+		<form-bean name="casaForm" type="br.com.bonus.imovel.casa.action_form.CasaForm"/>
+		<form-bean name="imovelForm" type="br.com.bonus.imovel.imovel.action_form.ImovelForm"/>
+		<form-bean name="tipoFinalidadeForm" type="br.com.bonus.imovel.tipofinalidade.action_form.TipoFinalidadeForm"/>
+		<form-bean name="tipoNegociacaoForm" type="br.com.bonus.imovel.tiponegociacao.action_form.TipoNegociacaoForm"/>
+		
+	</form-beans>
+	
+	<!-- Todas as classes Action dever]ao ser configuradas aqui. -->
+	<action-mappings>
+		<!-- 
+			path="/idiomaAction" ===> 	Nome dado à action que será usado no JSP na TAG <form action="idiomaAction">. 
+										Com isso, ao submeter o jsp, esta action será chamada, sendo executada de 
+										acordo com sua configuração
+			name="idiomaForm"	  ===>	Classe Form que será utilizada para armazenar os dados dos campos do JSP.
+										contatoForm foi o apelido dado na TAG <form-bean> acima
+			type="br.com.strutsidioma.idioma.action_form.IdiomaAction"		===>	Classe Action que deverá ser executada ao submeter o JSP.
+			parameter="acao"	  ===>  Variavel que conterá o nome do método a ser chamado ao submeter o jsp.
+								  		Para sua utilização é necessário que no JSP tenha um campo hidden com seu nome.
+								  			Ex: <h:hidden property="acao" value="empty"/>
+								  		O valor atribuido a esta variável, será o nome do método a ser chamado na classe Action.
+			scope="session"		  ==>	Tipo de escopo adotado. Com o session, os dados ficam preenchidos até que mande limpar.
+		 -->
+		<action path="/tipoTelefoneAction"
+				type="br.com.bonus.telefone.tipotelefone.action_form.TipoTelefoneAction"
+				name="tipoTelefoneForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="tipo_telefone_cadastro" path="/tipoTelefone.jsp" />
+				<forward name="tipo_telefone_consulta" path="/tipoTelefone_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/telefoneAction"
+				type="br.com.bonus.telefone.telefone.action_form.TelefoneAction"
+				name="telefoneForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="telefone_cadastro" path="/telefone.jsp" />
+				<forward name="telefone_consulta" path="/telefone_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/paisAction"
+				type="br.com.bonus.endereco.pais.action_form.PaisAction"
+				name="paisForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="pais_cadastro" path="/pais.jsp" />
+				<forward name="pais_consulta" path="/pais_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/estadoAction"
+				type="br.com.bonus.endereco.estado.action_form.EstadoAction"
+				name="estadoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="estado_cadastro" path="/estado.jsp" />
+				<forward name="estado_consulta" path="/estado_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/municipioAction"
+				type="br.com.bonus.endereco.municipio.action_form.MunicipioAction"
+				name="municipioForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="municipio_cadastro" path="/municipio.jsp" />
+				<forward name="municipio_consulta" path="/municipio_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/enderecoAction"
+				type="br.com.bonus.endereco.endereco.action_form.EnderecoAction"
+				name="enderecoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="endereco_cadastro" path="/endereco.jsp" />
+				<forward name="endereco_consulta" path="/endereco_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/pessoaAction"
+				type="br.com.bonus.pessoa.pessoa.action_form.PessoaAction"
+				name="pessoaForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="pessoa_cadastro" path="/pessoa.jsp" />
+				<forward name="pessoa_consulta" path="/pessoa_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/corretorAction"
+				type="br.com.bonus.pessoa.corretor.action_form.CorretorAction"
+				name="corretorForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="corretor_cadastro" path="/corretor.jsp" />
+				<forward name="corretor_consulta" path="/corretor_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/clienteAction"
+				type="br.com.bonus.pessoa.cliente.action_form.ClienteAction"
+				name="clienteForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="cliente_cadastro" path="/cliente.jsp" />
+				<forward name="cliente_consulta" path="/cliente_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/contratoAction"
+				type="br.com.bonus.contrato.contrato.action_form.ContratoAction"
+				name="contratoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="contrato_cadastro" path="/contrato.jsp" />
+				<forward name="contrato_consulta" path="/contrato_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/tipoContratoAction"
+				type="br.com.bonus.contrato.tipocontrato.action_form.TipoContratoAction"
+				name="tipoContratoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="tipoContrato_cadastro" path="/tipoContrato.jsp" />
+				<forward name="tipoContrato_consulta" path="/tipoContrato_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/apartamentoAction"
+				type="br.com.bonus.imovel.apartamento.action_form.ApartamentoAction"
+				name="apartamentoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="apartamento_cadastro" path="/apartamento.jsp" />
+				<forward name="apartamento_consulta" path="/apartamento_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/casaAction"
+				type="br.com.bonus.imovel.casa.action_form.CasaAction"
+				name="casaForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="casa_cadastro" path="/casa.jsp" />
+				<forward name="casa_consulta" path="/casa_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/imovelAction"
+				type="br.com.bonus.imovel.imovel.action_form.ImovelAction"
+				name="imovelForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="imovel_cadastro" path="/imovel.jsp" />
+				<forward name="imovel_consulta" path="/imovel_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/tipoFinalidadeAction"
+				type="br.com.bonus.imovel.tipofinalidade.action_form.TipoFinalidadeAction"
+				name="tipoFinalidadeForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="tipo_finalidade_cadastro" path="/tipoFinalidade.jsp" />
+				<forward name="tipo_finalidade_consulta" path="/tipoFinalidade_consulta.jsp" />
+				
+		</action>
+		
+		<action path="/tipoNegociacaoAction"
+				type="br.com.bonus.imovel.tiponegociacao.action_form.ApartamentoAction"
+				name="tipoNegociacaoForm"		
+				parameter="method"	
+				scope="session">
+				
+				<!-- Dando apelidos às JSPs que esta Action manipulará -->
+				<forward name="tipo_negociacao_cadastro" path="/tipoNegociacao.jsp" />
+				<forward name="tipo_negociacao_consulta" path="/tipoNegociacao_consulta.jsp" />
+				
+		</action>
+		
+	</action-mappings>
+	
+	<!-- Informa ao Struts em qual arquivo estão as mensagens que serão usadas no Projeto -->
+	<message-resources parameter="MessageResources" />
+	
+	
+</struts-config>	

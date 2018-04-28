@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.abstractdao{AbstractDAO.java[AbstractDAO" modifiers="1025" timestamp="1383568711342"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.telefone.tipotelefone.dao{TipoTelefoneDAOService.java[TipoTelefoneDAOService" modifiers="513" timestamp="1383568574743"/>
+<typeInfo handle="=bonus/C:\/Users\/Frederico\/Desktop\/Fatec\/Fatec - 6º Ciclo\/Engenharia de Software IV\/Projeto - Engenharia de Software IV\/workspace bonus\/bonus\/WebContent\/WEB-INF\/lib\/struts-extras-1.3.8.jar&lt;org.apache.struts.actions(DispatchAction.class[DispatchAction" modifiers="1057" timestamp="1383328744450"/>
+<typeInfo handle="=bonus/C:\/Users\/Frederico\/Desktop\/Fatec\/Fatec - 6º Ciclo\/Engenharia de Software IV\/Projeto - Engenharia de Software IV\/workspace bonus\/bonus\/WebContent\/WEB-INF\/lib\/struts-core-1.3.8.jar&lt;org.apache.struts.action(ActionForm.class[ActionForm" modifiers="1057" timestamp="1383328744338"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.telefone.telefone.dao{TelefoneDAOService.java[TelefoneDAOService" modifiers="513" timestamp="1383599687728"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.endereco.pais.dao{PaisDAOService.java[PaisDAOService" modifiers="513" timestamp="1383738623671"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.endereco.municipio.dao{MunicipioDAOService.java[MunicipioDAOService" modifiers="513" timestamp="1383767019647"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.endereco.estado.dao{EstadoDAOService.java[EstadoDAOService" modifiers="513" timestamp="1383767157523"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.endereco.endereco.dao{EnderecoDAOService.java[EnderecoDAOService" modifiers="513" timestamp="1383824860708"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.imovel.tiponegociacao.dao{TipoNegociacaoDAOService.java[TipoNegociacaoDAOService" modifiers="513" timestamp="1384572234475"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.imovel.tipofinalidade.dao{TipoFinalidadeDAOService.java[TipoFinalidadeDAOService" modifiers="513" timestamp="1384601350100"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.pessoa.cliente.dao{ClienteDAOService.java[ClienteDAOService" modifiers="513" timestamp="1385121289599"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.imovel.casa.dao{CasaDAOService.java[CasaDAOService" modifiers="513" timestamp="1385549668194"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.imovel.apartamento.dao{ApartamentoDAOService.java[ApartamentoDAOService" modifiers="513" timestamp="1385750969913"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.imovel.imovel.dao{ImovelDAOService.java[ImovelDAOService" modifiers="513" timestamp="1385811005971"/>
+<typeInfo handle="=bonus/src&lt;br.com.bonus.contrato.contrato.dao{ContratoDAOService.java[ContratoDAOService" modifiers="513" timestamp="1386070649135"/>
+</typeInfoHistroy>

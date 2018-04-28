@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Imobiliária Bonus</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "input[type=submit], a, button" )
+      .button()
+      .click(function( event ) {
+        event.method=abrirTela();
+      });
+  });
+  </script>
+</head>
+<body>
+
+<div id="logo">
+	<img alt="Logomarca" src="imagens/logo.png" border="0px">
+</div>
+
+<div id="menu_principal_txt">
+	<li><a href="clienteAction.do?method=abrirTela">Clientes</a></li>
+	<li><a href="clienteAction.do?method=abrirTela">Corretor</a></li>
+	<li><a href="endereco.html">Endereço</a></li>
+	<li><a href="imovel.html">Imóvel</a></li>
+	<li><a href="contrato.html">Contrato</a></li>
+	<li><a href="telefone.html">Telefone</a></li>
+</div>
+
+<div id="conteudo">
+	<!-- TABELA DOS CAMPOS -->
+			<h1>Contrato</h1>
+			<table>
+				<tr>
+					<td>
+						<label>Imóvel</label>
+					</td>
+					<td>
+						<input type="text" size="50" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label>Cliente</label>
+					</td>
+					<td>
+						<input type="text" size="75" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label>Corretor</label>
+					</td>
+					<td>
+						<input type="text" size="75" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label>Data de Início</label>
+					</td>
+					<td>
+						<input type="text" size="25" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label>Data de Término</label>
+					</td>
+					<td>
+						<input type="text" size="25" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label>Tipo de Contrato</label>
+					</td>
+					<td>
+						<input type="text" size="50" />
+					</td>
+				</tr>
+			</table>
+</div>
+
+
+
+<!-- TABELA DOS BOTÕES -->		
+			<div id="menu_modal_txt">
+				<li><a href="javascript://" onclick="executar('inserir')">Salvar</a></li>
+				<li><a href="javascript://" onclick="executar('alterar')">Alterar</a></li>
+				<li><a href="javascript://" onclick="executar('filtrar')">Filtrar</a></li>
+				<li><a href="javascript://" onclick="executar('limpar')">Limpar</a></li>
+				<li><a href="javascript://" onclick="executar('excluir')">Excluir</a></li>
+				<li><a href="index.html">Home</a></li>
+			</div>
+</body>
+
+</html>
